@@ -4,7 +4,6 @@ import './UsersList.css'
 import UserItem from './UserItem'
 
 const UsersList = props=> {
-console.log(props)
 
     if(props.items.length === 0){
         return( 
