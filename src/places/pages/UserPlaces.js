@@ -1,5 +1,5 @@
 import React from "react";
-
+import {useParams} from 'react-router-dom'
 
 import PlaceList from "../components/PlaceList";
 
@@ -19,13 +19,12 @@ const PLACES = [
 
     {
         id:'p2',
-        title:'Empire State Building',
+        title:'Dharahara Tower',
         description: 'Famous Landmark',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_Cropped.jpg/320px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_Cropped.jpg',
-        address: 'New York',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/DHARAHARA_TOWER.jpg/800px-DHARAHARA_TOWER.jpg',
         location:{
-            lat:40.7484405 ,
-            lng:-73.9882393
+            lat:27.7003141 ,
+            lng:85.309543
         },
         userID:'u2'
     }
@@ -33,8 +32,11 @@ const PLACES = [
 
 const UserPlaces = props =>{
 
+    const uid = useParams().uID;
+    const loadedPlaces = PLACES.filter(places => places.userID === uid)
     return(
-        <PlaceList items={PLACES} />
+        
+        <PlaceList items={loadedPlaces} />
     )
 }
 
