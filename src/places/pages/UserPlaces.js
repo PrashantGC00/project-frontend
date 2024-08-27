@@ -22,6 +22,7 @@ const PLACES = [
         title:'Dharahara Tower',
         description: 'Famous Landmark',
         image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/DHARAHARA_TOWER.jpg/800px-DHARAHARA_TOWER.jpg',
+        address: 'Sundhara Rd, Kathmandu 44600',
         location:{
             lat:27.7003141 ,
             lng:85.309543
