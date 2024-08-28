@@ -30,7 +30,7 @@ const PlaceItem = props =>{
         </Modal>
 
          <li className="place-item">
-        <Card className="place-item__content">
+        <Card className="place-item__content" style={{background:"#EEEDEB"}}>
             <div className="place-item__image">
                 <img src={props.image} alt={props.title} />
             </div>
