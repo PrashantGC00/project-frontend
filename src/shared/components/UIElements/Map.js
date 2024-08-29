@@ -2,6 +2,7 @@ import React, {useRef, useEffect} from "react";
 
 import './Map.css'
 
+
 const Map = props => {
     
     const mapRef = useRef()
@@ -11,8 +12,7 @@ const Map = props => {
     useEffect(() => {
         const map = new window.google.maps.Map(mapRef.current, {
             center: center,
-            zoom: zoom
-    
+            zoom: zoom,
         })
 
         new window.google.maps.Marker({position: props.center, map: map})

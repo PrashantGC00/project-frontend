@@ -1,7 +1,17 @@
 import React from "react";
 
-const Place = () =>{
-    return <h1>Place</h1>
+import './Place.css'
+
+import Input from "../../shared/components/FormElements/Input";
+
+const Place = () => {
+    return (
+        <form className="place-form">
+            <Input element='input' type='text' label='Title'/>
+        </form>    
+    )
+    
 }
 
 export default Place
+        
