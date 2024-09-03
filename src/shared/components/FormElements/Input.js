@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 
 import './Input.css'
 
@@ -24,6 +24,15 @@ const inputReducer = (state, action) =>{
 
 const Input = props =>{
     const [inputState, dispatch] = useReducer(inputReducer, {value: '', isValid: false, isTouch: false})
+
+    const {id, onInput} = props
+    const {value, isValid} = inputState 
+
+    useEffect(() =>{
+        props.onInput(id, value, isValid)
+    }, [id, value, isValid, onInput])
+
+
 
     const changeHandler = e =>{
         dispatch({
@@ -54,8 +63,6 @@ const Input = props =>{
         onChange={changeHandler} 
         onBlur={touchHandler}
         value={inputState.value}/>
-
-   
 
     return (
         <div className={`form-control ${!inputState.isValid && inputState.isTouch ? 'form-control--invalid': ''}`}>
